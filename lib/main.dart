@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:searchai/pages/home_page.dart';
 import 'package:searchai/theme/colors.dart';
 
@@ -13,8 +14,10 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        scaffoldBackgroundColor: AppColors.background
+        scaffoldBackgroundColor: AppColors.background,
+        textTheme: GoogleFonts.comfortaaTextTheme(ThemeData.dark().textTheme),
       ),
       home: HomePage(),
     );
