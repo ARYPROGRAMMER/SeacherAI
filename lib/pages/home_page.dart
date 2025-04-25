@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:searchai/theme/colors.dart';
 import 'package:searchai/widgets/search_section.dart';
 import 'package:searchai/widgets/side_bar.dart';
 
@@ -13,7 +14,77 @@ class HomePage extends StatelessWidget {
           SideBar(),
           Expanded(
             child: Column(
-              children: [Expanded(child: SearchSection()), Container(height: 20)],
+              children: [
+                Expanded(child: SearchSection()),
+                Container(
+                  padding: EdgeInsets.symmetric(vertical: 16),
+                  child: Wrap(
+                    alignment: WrapAlignment.center,
+                    children: [
+                      Padding(
+                        padding: EdgeInsets.symmetric(horizontal: 12),
+                        child: Text(
+                          "Pro",
+                          style: TextStyle(
+                            fontSize: 14,
+                            color: AppColors.footerGrey,
+                          ),
+                        ),
+                      ),
+                      Padding(
+                        padding: EdgeInsets.symmetric(horizontal: 12),
+                        child: Text(
+                          "Enterprise",
+                          style: TextStyle(
+                            fontSize: 14,
+                            color: AppColors.footerGrey,
+                          ),
+                        ),
+                      ),
+                      Padding(
+                        padding: EdgeInsets.symmetric(horizontal: 12),
+                        child: Text(
+                          "Store",
+                          style: TextStyle(
+                            fontSize: 14,
+                            color: AppColors.footerGrey,
+                          ),
+                        ),
+                      ),
+                      Padding(
+                        padding: EdgeInsets.symmetric(horizontal: 12),
+                        child: Text(
+                          "Blog",
+                          style: TextStyle(
+                            fontSize: 14,
+                            color: AppColors.footerGrey,
+                          ),
+                        ),
+                      ),
+                      Padding(
+                        padding: EdgeInsets.symmetric(horizontal: 12),
+                        child: Text(
+                          "Careers",
+                          style: TextStyle(
+                            fontSize: 14,
+                            color: AppColors.footerGrey,
+                          ),
+                        ),
+                      ),
+                      Padding(
+                        padding: EdgeInsets.symmetric(horizontal: 12),
+                        child: Text(
+                          "English (English)",
+                          style: TextStyle(
+                            fontSize: 14,
+                            color: AppColors.footerGrey,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ],
             ),
           ),
         ],

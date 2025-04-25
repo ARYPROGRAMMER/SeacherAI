@@ -31,7 +31,7 @@ class _SearchbarButtonState extends State<SearchbarButton> {
         padding: EdgeInsets.symmetric(horizontal: 8, vertical: 4),
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(6),
-          color: isHover? AppColors.proButton : Colors.transparent,
+          color: isHover ? AppColors.proButton : Colors.transparent,
         ),
         child: Row(
           children: [
