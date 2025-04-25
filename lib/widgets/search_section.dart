@@ -12,7 +12,7 @@ class SearchSection extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         Text(
-          "Where Knowledge Begins",
+          "SearchAI - Improve Knowledge",
           style: GoogleFonts.ibmPlexMono(
             fontSize: 38,
             fontWeight: FontWeight.w400,
@@ -24,42 +24,57 @@ class SearchSection extends StatelessWidget {
         const SizedBox(height: 32),
         Container(
           width: 700,
-          decoration: BoxDecoration(color: AppColors.searchBar),
+          decoration: BoxDecoration(
+            color: AppColors.searchBar,
+            borderRadius: BorderRadius.circular(8),
+            border: Border.all(color: AppColors.searchBarBorder, width: 1.5),
+          ),
           child: Column(
             children: [
-              TextField(
-                decoration: InputDecoration(
-                  hintText: "Search Your Mind...",
-                  hintStyle: TextStyle(color: AppColors.textGrey, fontSize: 16),
-                  border: InputBorder.none,
+              Padding(
+                padding: const EdgeInsets.all(16.0),
+                child: TextField(
+                  decoration: InputDecoration(
+                    hintText: "What's on Your Mind...",
+                    hintStyle: TextStyle(
+                      color: AppColors.textGrey,
+                      fontSize: 16,
+                    ),
+                    border: InputBorder.none,
+                    isDense: true,
+                    contentPadding: EdgeInsets.zero,
+                  ),
                 ),
               ),
 
-              Row(
-                children: [
-                  SearchbarButton(
-                    icon: Icons.auto_awesome_rounded,
-                    text: "Focus",
-                  ),
-                  const SizedBox(width: 12),
-                  SearchbarButton(
-                    icon: Icons.add_circle_rounded,
-                    text: "Attach",
-                  ),
-                  const Spacer(),
-                  Container(
-                    padding: EdgeInsets.all(9),
-                    decoration: BoxDecoration(
-                      color: AppColors.submitButton,
-                      borderRadius: BorderRadius.circular(40),
+              Padding(
+                padding: const EdgeInsets.all(10.0),
+                child: Row(
+                  children: [
+                    SearchbarButton(
+                      icon: Icons.auto_awesome_rounded,
+                      text: "Focus",
                     ),
-                    child: const Icon(
-                      Icons.arrow_forward_rounded,
-                      color: AppColors.background,
-                      size: 16,
+                    const SizedBox(width: 12),
+                    SearchbarButton(
+                      icon: Icons.add_circle_rounded,
+                      text: "Attach",
                     ),
-                  ),
-                ],
+                    const Spacer(),
+                    Container(
+                      padding: EdgeInsets.all(9),
+                      decoration: BoxDecoration(
+                        color: AppColors.submitButton,
+                        borderRadius: BorderRadius.circular(40),
+                      ),
+                      child: const Icon(
+                        Icons.arrow_forward_rounded,
+                        color: AppColors.background,
+                        size: 16,
+                      ),
+                    ),
+                  ],
+                ),
               ),
             ],
           ),
