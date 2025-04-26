@@ -1,6 +1,6 @@
-# SearcherAI
+# SearchAI
 
-SearcherAI is a modern, sleek Flutter-powered application enhanced with Gemini AI capabilities for intelligent web search, real-time news aggregation, and comprehensive report generation. Built with a focus on user experience and information accuracy, SearcherAI helps users discover, organize, and process online information efficiently.
+SearchAI is a modern, sleek Flutter-powered application enhanced with Gemini AI capabilities for intelligent web search, real-time news aggregation, and comprehensive report generation. Built with a focus on user experience and information accuracy, SearchAI helps users discover, organize, and process online information efficiently.
 
 ## Features
 
@@ -46,8 +46,8 @@ The project is organized into two main parts:
 1. **Clone the repository**
 
 ```bash
-git clone https://github.com/yourusername/searcherai.git
-cd searcherai
+git clone https://github.com/yourusername/searchai.git
+cd searchai
 ```
 
 2. **Set up backend**
