@@ -11,7 +11,7 @@ class SearchService:
         response = tavily_client.search(query,max_results=10)
         search_results = response.get("results",[])
 
-        fro result in search_results:
+        for result in search_results:
             downloaded = trafilatura.fetch_url(results.get("url"))
             content = trafilatura.extract(downloaded, include_comments=False)
 
