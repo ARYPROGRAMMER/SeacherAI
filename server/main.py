@@ -11,4 +11,5 @@ def chat_endpoint(body: ChatBody):
 
     #similarity search
 
+
     return body.query
