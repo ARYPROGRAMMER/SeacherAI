@@ -18,7 +18,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         scaffoldBackgroundColor: AppColors.background,
         textTheme: GoogleFonts.comfortaaTextTheme(ThemeData.dark().textTheme),
-        colorScheme: ColorScheme.fromSeed(seedColor: AppColors.submitButton)
+        colorScheme: ColorScheme.fromSeed(seedColor: AppColors.submitButton),
       ),
       home: HomePage(),
     );
