@@ -22,8 +22,6 @@ class SearchService:
                 "content": content or ""
                 })
 
-            print("--------------------------------------------------------------------------------------------------")
-            print(f"search res for within {results}")
             return results
         except Exception as e:
             print(e)

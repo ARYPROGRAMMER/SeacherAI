@@ -22,6 +22,4 @@ class SortSourceService:
             if similarity > 0.4:
                 relavant_docs.append(res)
         
-        print("--------------------------------------------------------------------------------------------------")
-        print(f"sort res for within {relavant_docs}")
         return sorted(relavant_docs, key = lambda x: x["relavance_score"], reverse=True)

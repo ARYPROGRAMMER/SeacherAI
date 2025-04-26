@@ -22,14 +22,8 @@ async def websocket_chat_endpoint(websocket: WebSocket):
 
         search_results = search_service.web_search(query)
 
-        print("--------------------------------------------------------------------------------------------------")
-        print(f"search res {search_results}")
-
         sorted_results = sort_source_service.sort_service(query, search_results)
 
-        print("--------------------------------------------------------------------------------------------------")
-
-        print(f"sorted res {sorted_results}")
 
 
 

@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:searchai/services/chat_web_service.dart';
 import 'package:searchai/theme/colors.dart';
+import 'package:skeletonizer/skeletonizer.dart';
 
 class SourcesSection extends StatefulWidget {
   const SourcesSection({super.key});
@@ -9,12 +11,31 @@ class SourcesSection extends StatefulWidget {
 }
 
 class _SourcesSectionState extends State<SourcesSection> {
-  List<Map<String, dynamic>> searchResults = [
+  bool isLoading = true;
+
+  List searchResults = [
+    {"title": "WOWWWWWWWWWWWWWWWWWW", "url": "www.google.com"},
+    {"title": "WOWWWWWWWWWWWWWWWWWW", "url": "www.google.com"},
+    {"title": "WOWWWWWWWWWWWWWWWWWW", "url": "www.google.com"},
+    {"title": "WOWWWWWWWWWWWWWWWWWW", "url": "www.google.com"},
+    {"title": "WOWWWWWWWWWWWWWWWWWW", "url": "www.google.com"},
     {"title": "WOWWWWWWWWWWWWWWWWWW", "url": "www.google.com"},
     {"title": "WOWWWWWWWWWWWWWWWWWW", "url": "www.google.com"},
     {"title": "WOWWWWWWWWWWWWWWWWWW", "url": "www.google.com"},
     {"title": "WOWWWWWWWWWWWWWWWWWW", "url": "www.google.com"},
   ];
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    ChatWebService().searchResultStream.listen((data) {
+      setState(() {
+        searchResults = data["data"];
+        isLoading = false;
+      });
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -34,38 +55,41 @@ class _SourcesSectionState extends State<SourcesSection> {
 
         const SizedBox(height: 16),
 
-        Wrap(
-          spacing: 16,
-          runSpacing: 16,
-          children:
-              searchResults.map((res) {
-                return Container(
-                  padding: EdgeInsets.all(16),
-                  width: 150,
-                  decoration: BoxDecoration(
-                    color: AppColors.cardColor,
-                    borderRadius: BorderRadius.circular(8),
-                  ),
-                  child: Column(
-                    children: [
-                      Text(
-                        res["title"],
-                        style: TextStyle(fontWeight: FontWeight.w500),
-                        maxLines: 2,
-                        overflow: TextOverflow.ellipsis,
-                      ),
-                      const SizedBox(height: 8),
+        Skeletonizer(
+          enabled: isLoading,
+          child: Wrap(
+            spacing: 16,
+            runSpacing: 16,
+            children:
+                searchResults.map((res) {
+                  return Container(
+                    padding: EdgeInsets.all(16),
+                    width: 150,
+                    decoration: BoxDecoration(
+                      color: AppColors.cardColor,
+                      borderRadius: BorderRadius.circular(8),
+                    ),
+                    child: Column(
+                      children: [
+                        Text(
+                          res["title"],
+                          style: TextStyle(fontWeight: FontWeight.w500),
+                          maxLines: 2,
+                          overflow: TextOverflow.ellipsis,
+                        ),
+                        const SizedBox(height: 8),
 
-                      Text(
-                        res["url"],
-                        style: TextStyle(color: Colors.grey, fontSize: 12),
-                        maxLines: 1,
-                        overflow: TextOverflow.ellipsis,
-                      ),
-                    ],
-                  ),
-                );
-              }).toList(),
+                        Text(
+                          res["url"],
+                          style: TextStyle(color: Colors.grey, fontSize: 12),
+                          maxLines: 1,
+                          overflow: TextOverflow.ellipsis,
+                        ),
+                      ],
+                    ),
+                  );
+                }).toList(),
+          ),
         ),
       ],
     );
