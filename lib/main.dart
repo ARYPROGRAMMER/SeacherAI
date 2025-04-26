@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:searchai/pages/chat_page.dart';
 import 'package:searchai/pages/home_page.dart';
 import 'package:searchai/theme/colors.dart';
 
@@ -20,7 +21,7 @@ class MyApp extends StatelessWidget {
         textTheme: GoogleFonts.comfortaaTextTheme(ThemeData.dark().textTheme),
         colorScheme: ColorScheme.fromSeed(seedColor: AppColors.submitButton),
       ),
-      home: HomePage(),
+      home: ChatPage(question: "Who is Arya Singh"),
     );
   }
 }
