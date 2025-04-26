@@ -86,3 +86,14 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 ## License
 
 This project is licensed under the MIT License - see the LICENSE file for details.
+
+**Wanna Read More? Check out**:
+- [Flutter Documentation](https://flutter.dev/docs) for more details on how to use Flutter.
+- [Tavily Documentation](https://app.tavily.com/home) for more details on how to use the Tavily API.
+- [Sentence Transformers](https://sbert.net/docs/sentence_transformer/pretrained_models.html) for more details on how to use the Sentence Transformers library.
+- [Trafilatura](https://trafilatura.readthedocs.io/en/latest/) for more details on how to use the Trafilatura library.
+- [Gemini AI](https://aistudio.google.com/prompts/new_chat) for more details on how to use the Gemini AI API.
+
+---
+Crafted with ❤️ Arya Singh
+---
