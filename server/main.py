@@ -2,7 +2,7 @@ from fastapi import FastAPI, WebSocket
 from pydantic_models.chat_body import ChatBody
 from services.search_service import SearchService
 from services.sort_source import SortSourceService
-from services.llm_Service import LLMService
+from services.llm_service import LLMService
 import asyncio
 
 app = FastAPI()
@@ -21,7 +21,17 @@ async def websocket_chat_endpoint(websocket: WebSocket):
         query = data.get("query")
 
         search_results = search_service.web_search(query)
+
+        print("--------------------------------------------------------------------------------------------------")
+        print(f"search res {search_results}")
+
         sorted_results = sort_source_service.sort_service(query, search_results)
+
+        print("--------------------------------------------------------------------------------------------------")
+
+        print(f"sorted res {sorted_results}")
+
+
 
         await asyncio.sleep(0.1)
         await websocket.send_json({

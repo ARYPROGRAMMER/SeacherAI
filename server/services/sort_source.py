@@ -1,7 +1,7 @@
 # cos similarity search
 
 from typing import List
-from sentence_transformer import SentenceTransformer
+from sentence_transformers import SentenceTransformer
 import numpy as np
 
 class SortSourceService:
@@ -22,4 +22,6 @@ class SortSourceService:
             if similarity > 0.4:
                 relavant_docs.append(res)
         
+        print("--------------------------------------------------------------------------------------------------")
+        print(f"sort res for within {relavant_docs}")
         return sorted(relavant_docs, key = lambda x: x["relavance_score"], reverse=True)
